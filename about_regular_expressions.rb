@@ -44,7 +44,7 @@ class AboutRegularExpressions < Neo::Koan
   # ------------------------------------------------------------------
 
   def test_the_left_most_match_wins
-    assert_equal "az", "abbccc az"[/az*/]
+    assert_equal __, "abbccc az"[/az*/]
   end
 
   # ------------------------------------------------------------------
