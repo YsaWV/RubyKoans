@@ -15,16 +15,33 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  	if a == 0 || b == 0 || c == 0
+    	raise TriangleError
+  	end
+
+  	if c <=0
+  		raise TriangleError
+  	end
+
+  	if (a +b <= c) || (a + c <= b) || (b + c <= a) 
+  		raise TriangleError
+  	end
+
+
   	if (a == b) && (a == c) && (c == b)
   		:equilateral
   	elsif (a != b) && (a != c) && (c != b)
   		:scalene
-  	else
+  	elsif (a == b) || (a == c) || (c == b)
   		:isosceles
+  	# elsif a == 0 && (a == c) && (a == b)
+  	# 	raise TriangleError, "why the exception happened"
   	end
+  		
   		
 end
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
+
 end
